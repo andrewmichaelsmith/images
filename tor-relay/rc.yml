@@ -1,0 +1,23 @@
+---
+  apiVersion: "v1"
+  kind: "ReplicationController"
+  metadata: 
+    name: "tor-relay"
+    namespace: "default"
+  spec: 
+    replicas: 1
+    template: 
+      metadata: 
+        labels:
+          app: tor
+      spec: 
+        containers: 
+          - name: "tor-relay"
+            image: "andrewmichaelsmith/tor"
+            ports: 
+              - containerPort: 9001
+                protocol: "TCP"
+            imagePullPolicy: "IfNotPresent"
+        restartPolicy: "Always"
+        dnsPolicy: "ClusterFirst"
+
