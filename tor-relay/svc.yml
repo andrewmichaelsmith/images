@@ -1,0 +1,14 @@
+---
+  kind: "Service"
+  apiVersion: "v1"
+  metadata: 
+    name: "tor"
+  spec: 
+    selector: 
+      app: "tor"
+    ports: 
+      - 
+        protocol: "TCP"
+        port: 9001
+        targetPort: 9001
+
