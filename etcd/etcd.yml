@@ -23,7 +23,7 @@ metadata:
 spec:
   containers:
   - command:
-    - /etcd
+    - /usr/bin/etcd
     - --name
     - etcd0
     - --initial-advertise-peer-urls
@@ -38,7 +38,7 @@ spec:
     - etcd0=http://etcd0:2380,etcd1=http://etcd1:2380,etcd2=http://etcd2:2380
     - --initial-cluster-state
     - new
-    image: quay.io/coreos/etcd:latest
+    image: andrewmichaelsmith/etcd
     name: etcd0
     ports:
     - containerPort: 2379
@@ -82,7 +82,7 @@ metadata:
 spec:
   containers:
   - command:
-    - /etcd
+    - /usr/bin/etcd
     - --name
     - etcd1
     - --initial-advertise-peer-urls
@@ -97,7 +97,7 @@ spec:
     - etcd0=http://etcd0:2380,etcd1=http://etcd1:2380,etcd2=http://etcd2:2380
     - --initial-cluster-state
     - new
-    image: quay.io/coreos/etcd:latest
+    image: andrewmichaelsmith/etcd
     name: etcd1
     ports:
     - containerPort: 2379
@@ -141,7 +141,7 @@ metadata:
 spec:
   containers:
   - command:
-    - /etcd
+    - /usr/bin/etcd
     - --name
     - etcd2
     - --initial-advertise-peer-urls
@@ -156,7 +156,7 @@ spec:
     - etcd0=http://etcd0:2380,etcd1=http://etcd1:2380,etcd2=http://etcd2:2380
     - --initial-cluster-state
     - new
-    image: quay.io/coreos/etcd:latest
+    image: andrewmichaelsmith/etcd
     name: etcd2
     ports:
     - containerPort: 2379
