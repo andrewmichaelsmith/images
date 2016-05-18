@@ -13,7 +13,7 @@
       spec: 
         containers: 
           - name: "tor-relay"
-            image: "andrewmichaelsmith/tor"
+            image: "quay.io/andysmith/tor-relay"
             ports: 
               - containerPort: 9001
                 protocol: "TCP"
