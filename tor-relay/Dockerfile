@@ -6,4 +6,4 @@ RUN \
 	rm -rf /var/cache/apk/*
 USER tor
 ADD torrc /etc/tor/
-CMD ["tor"]
+ENTRYPOINT ["tor"]
