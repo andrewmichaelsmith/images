@@ -5,5 +5,4 @@ RUN \
 	apk add --update tor && \
 	rm -rf /var/cache/apk/*
 USER tor
-ADD torrc /etc/tor/
 ENTRYPOINT ["tor"]
