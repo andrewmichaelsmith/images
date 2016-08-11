@@ -18,6 +18,15 @@
               - containerPort: 9001
                 protocol: "TCP"
             imagePullPolicy: "IfNotPresent"
+            volumeMounts:
+              - name: torrc
+                mountPath: /etc/tor/
+                readOnly: true
         restartPolicy: "Always"
         dnsPolicy: "ClusterFirst"
+        volumes:
+          - name: torrc
+            configMap:
+              name: torrc-a
+              
 
