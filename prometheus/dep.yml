@@ -1,0 +1,31 @@
+---
+  apiVersion: "extensions/v1beta1"
+  kind: "Deployment"
+  metadata: 
+    name: "prometheus"
+    namespace: "default"
+  spec: 
+    replicas: 1
+    template: 
+      metadata: 
+        labels:
+          app: prometheus
+      spec: 
+        containers: 
+          - name: "prometheus"
+            image: "quay.io/andysmith/prometheus"
+            ports: 
+              - containerPort: 9090
+                protocol: "TCP"
+            imagePullPolicy: "IfNotPresent"
+            volumeMounts:
+              - name: prometheus
+                mountPath: /prometheus.yml
+        restartPolicy: "Always"
+        dnsPolicy: "ClusterFirst"
+        volumes:
+          - name: prometheus
+            configMap:
+              name: prometheus
+              
+
