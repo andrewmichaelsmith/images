@@ -9,5 +9,5 @@ RUN \
        mv prometheus-1.1.2.linux-amd64/prometheus /usr/local/bin/ && \
        rm -rf prometheus-1.1.2.linux-amd64*
 
-ENTRYPOINT ["/prometheus-1.1.2.linux-amd64/prometheus"]
+ENTRYPOINT ["/usr/local/bin/prometheus"]
 
