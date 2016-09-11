@@ -14,13 +14,16 @@
         containers: 
           - name: "prometheus"
             image: "quay.io/andysmith/prometheus"
+            args: [
+              "-config.file=/prometheus/prometheus.yml"
+            ]	
             ports: 
               - containerPort: 9090
                 protocol: "TCP"
             imagePullPolicy: "IfNotPresent"
             volumeMounts:
               - name: prometheus
-                mountPath: /prometheus.yml
+                mountPath: /prometheus/
         restartPolicy: "Always"
         dnsPolicy: "ClusterFirst"
         volumes:
