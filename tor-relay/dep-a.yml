@@ -26,6 +26,6 @@
         volumes:
           - name: torrc
             configMap:
-              name: torrc
+              name: torrc-a
               
 
