@@ -1,0 +1,23 @@
+---
+  apiVersion: "extensions/v1beta1"
+  kind: "Deployment"
+  metadata: 
+    name: "kube-state-metrics"
+    namespace: "default"
+  spec: 
+    replicas: 1
+    template: 
+      metadata: 
+        labels:
+          app: kube-state-metrics
+      spec: 
+        containers: 
+          - name: "kube-state-metrics"
+            image: "quay.io/andysmith/kube-state-metrics:latest"
+            ports: 
+              - containerPort: 80
+                protocol: "TCP"
+            imagePullPolicy: "Always"
+        restartPolicy: "Always"
+        dnsPolicy: "ClusterFirst"
+

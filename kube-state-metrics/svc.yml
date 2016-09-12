@@ -1,0 +1,17 @@
+---
+  kind: "Service"
+  apiVersion: "v1"
+  metadata: 
+    name: "kube-state-metrics"
+  spec: 
+    selector: 
+      app: "kube-state-metrics"
+    type: "NodePort"
+    ports: 
+      - 
+        protocol: "TCP"
+        port: 80
+        targetPort: 80
+        nodePort: 31711
+    
+
