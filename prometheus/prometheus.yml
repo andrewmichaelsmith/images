@@ -189,22 +189,18 @@ items:
           action: replace
           target_label: kubernetes_pod_name
       
-      #- job_name: 'static'
-      #   tls_config:
-      #     ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-      #     # If your node certificates are self-signed or use a different CA to the
-      #     # master CA, then disable certificate verification below. Note that
-      #     # certificate verification is an integral part of a secure infrastructure
-      #     # so this should only be disabled in a controlled environment. You can
-      #     # disable certificate verification by uncommenting the line below.
-      #     #
-      #     insecure_skip_verify: true
-      #
-      #  metrics_path: '/prometheus'
-      #  static_configs:
-      #  - targets: ['static']
-      #
-      #
-      #
+      - job_name: 'static'
+         #tls_config:
+         #  ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+         #  # If your node certificates are self-signed or use a different CA to the
+         #  # master CA, then disable certificate verification below. Note that
+         #  # certificate verification is an integral part of a secure infrastructure
+         #  # so this should only be disabled in a controlled environment. You can
+         #  # disable certificate verification by uncommenting the line below.
+         #  #
+         #  insecure_skip_verify: true
       
+        metrics_path: '/metrics'
+        static_configs:
+        - targets: ['kube-state-metrics']
       
