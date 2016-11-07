@@ -16,7 +16,6 @@
 
 # TODO - At some point, we need to rename all skydns-*.yaml.* files to kubedns-*.yaml.*
 
-# __MACHINE_GENERATED_WARNING__
 
 apiVersion: v1
 kind: Service
@@ -30,7 +29,7 @@ metadata:
 spec:
   selector:
     k8s-app: kube-dns
-  clusterIP: 10.3.0.10
+  clusterIP: 10.2.0.10
   ports:
   - name: dns
     port: 53
