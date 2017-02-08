@@ -1,0 +1,4 @@
+kubectl config set-context local --cluster=local
+kubectl config set-cluster local --server=http://192.168.122.254:8080
+kubectl config use-context local
+
